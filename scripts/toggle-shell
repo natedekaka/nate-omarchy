@@ -1,0 +1,39 @@
+#!/bin/bash
+
+STATE_FILE="$HOME/.cache/shell-mode"
+OMARCHY_PATH="${OMARCHY_PATH:-$HOME/.local/share/omarchy}"
+CAELESTIA_DIR="${CAELESTIA_DIR:-$HOME/.config/quickshell/caelestia}"
+
+CAELESTIA_PID=$(pgrep -f "qs -c caelestia" 2>/dev/null || true)
+OMARCHY_PID=$(pgrep -f "quickshell.*$OMARCHY_PATH/shell" 2>/dev/null || true)
+
+export QML2_IMPORT_PATH="$CAELESTIA_DIR/build/qml:/home/daniarsyah/.local/caelestia-test/qt6/qml:${QML2_IMPORT_PATH:-}"
+
+start_caelestia() {
+  nohup qs -c caelestia -d >/dev/null 2>&1 &
+  echo "caelestia" > "$STATE_FILE"
+  notify-send -t 2000 "Shell: Caelestia" "Full desktop shell suite"
+}
+
+start_omarchy() {
+  nohup quickshell -n -p "$OMARCHY_PATH/shell" >/dev/null 2>&1 &
+  echo "omarchy" > "$STATE_FILE"
+  notify-send -t 2000 "Shell: Omarchy" "Status bar & notifications"
+}
+
+if [[ -n "$CAELESTIA_PID" ]]; then
+  echo "Switching to Omarchy Shell..."
+  kill -15 $CAELESTIA_PID 2>/dev/null
+  sleep 0.5
+  kill -9 $CAELESTIA_PID 2>/dev/null
+  start_omarchy
+elif [[ -n "$OMARCHY_PID" ]]; then
+  echo "Switching to Caelestia Shell..."
+  kill -15 $OMARCHY_PID 2>/dev/null
+  sleep 0.5
+  kill -9 $OMARCHY_PID 2>/dev/null
+  start_caelestia
+else
+  echo "Starting Caelestia Shell..."
+  start_caelestia
+fi

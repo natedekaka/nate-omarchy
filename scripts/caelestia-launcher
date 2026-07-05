@@ -1,0 +1,10 @@
+#!/bin/bash
+# Detect current shell and open appropriate launcher
+if pgrep -f "qs -c caelestia" >/dev/null 2>&1; then
+    caelestia shell drawers toggle launcher
+elif pgrep -f "quickshell.*omarchy/shell" >/dev/null 2>&1; then
+    ~/.local/share/omarchy/bin/omarchy-shell shell toggle omarchy.launcher "{}"
+else
+    echo "No shell running" >&2
+    exit 1
+fi

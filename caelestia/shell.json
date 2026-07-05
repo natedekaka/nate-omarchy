@@ -1,0 +1,289 @@
+{
+    "appearance": {
+        "anim": {
+            "durations": {
+                "scale": 1
+            }
+        },
+        "font": {
+            "body": {
+                "family": "GoogleSansFlex"
+            },
+            "clock": "Rubik",
+            "headline": {
+                "family": "GoogleSansFlex"
+            },
+            "icon": {
+                "family": "Material Symbols Rounded"
+            },
+            "label": {
+                "family": "GoogleSansFlex"
+            },
+            "mono": {
+                "family": "CaskaydiaCove NF"
+            },
+            "workspaces": "Rubik"
+        },
+        "transparency": {
+            "base": 0.85,
+            "enabled": true,
+            "layers": 0.4
+        }
+    },
+    "background": {
+        "desktopClock": {
+            "background": {
+                "blur": true,
+                "enabled": true,
+                "opacity": 0.7
+            },
+            "enabled": true,
+            "invertColors": false,
+            "position": "bottom-right",
+            "scale": 1
+        },
+        "enabled": true,
+        "visualiser": {
+            "autoHide": true,
+            "blur": false,
+            "enabled": true,
+            "rounding": 1,
+            "spacing": 1
+        },
+        "wallpaperEnabled": true
+    },
+    "bar": {
+        "entries": [
+            {
+                "enabled": false,
+                "id": "logo"
+            },
+            {
+                "enabled": true,
+                "id": "workspaces"
+            },
+            {
+                "enabled": true,
+                "id": "spacer"
+            },
+            {
+                "enabled": true,
+                "id": "activeWindow"
+            },
+            {
+                "enabled": true,
+                "id": "spacer"
+            },
+            {
+                "enabled": true,
+                "id": "tray"
+            },
+            {
+                "enabled": true,
+                "id": "clock"
+            },
+            {
+                "enabled": true,
+                "id": "statusIcons"
+            },
+            {
+                "enabled": true,
+                "id": "power"
+            }
+        ],
+        "excludedScreens": [
+        ],
+        "persistent": true,
+        "popouts": {
+            "activeWindow": true,
+            "statusIcons": true,
+            "tray": true
+        },
+        "scrollActions": {
+            "brightness": true,
+            "volume": true,
+            "workspaces": true
+        },
+        "showOnHover": true,
+        "status": {
+            "showAudio": true,
+            "showBattery": true,
+            "showBluetooth": true,
+            "showKbLayout": false,
+            "showLockStatus": true,
+            "showMicrophone": true,
+            "showNetwork": true,
+            "showWifi": true
+        },
+        "workspaces": {
+            "activeIndicator": true,
+            "activeLabel": "○",
+            "label": "●",
+            "occupiedLabel": "○",
+            "perMonitorWorkspaces": true,
+            "showWindows": true,
+            "shown": 5
+        }
+    },
+    "border": {
+        "rounding": 16,
+        "smoothing": 20,
+        "thickness": 6
+    },
+    "dashboard": {
+        "enabled": true,
+        "performance": {
+            "showBattery": true,
+            "showCpu": true,
+            "showGpu": true,
+            "showMemory": true,
+            "showNetwork": true,
+            "showStorage": true
+        },
+        "showMedia": true,
+        "showOnHover": true,
+        "showPerformance": true,
+        "showWeather": true
+    },
+    "general": {
+        "apps": {
+            "audio": [
+                "pavucontrol"
+            ],
+            "explorer": [
+                "thunar"
+            ],
+            "playback": [
+                "mpv"
+            ],
+            "terminal": [
+                "foot"
+            ]
+        },
+        "idle": {
+            "lockBeforeSleep": true,
+            "timeouts": [
+                {
+                    "idleAction": "lock",
+                    "inhibitWhenAudio": true,
+                    "timeout": 180
+                },
+                {
+                    "idleAction": "dpms off",
+                    "returnAction": "dpms on",
+                    "timeout": 300
+                },
+                {
+                    "idleAction": [
+                        "suspendThenHibernate"
+                    ],
+                    "timeout": 600
+                }
+            ]
+        },
+        "logo": ""
+    },
+    "launcher": {
+        "enableDangerousActions": false,
+        "enabled": true,
+        "favouriteApps": [
+            "brave-browser",
+            "google-chrome"
+        ],
+        "vimKeybinds": false
+    },
+    "lock": {
+        "enableFprint": false,
+        "enableHowdy": false,
+        "enabled": true
+    },
+    "nexus": {
+        "networkRescanInterval": 15000,
+        "wallpapersPerRow": 4
+    },
+    "notifs": {
+        "defaultExpireTimeout": 5000,
+        "expire": true,
+        "fullscreen": "on"
+    },
+    "osd": {
+        "enableBrightness": true,
+        "enableMicrophone": false,
+        "enabled": true,
+        "hideDelay": 2000
+    },
+    "paths": {
+        "wallpaperDir": "~/Pictures/Wallpapers"
+    },
+    "services": {
+        "audioIncrement": 0.1,
+        "brightnessIncrement": 0.1,
+        "maxVolume": 1,
+        "smartScheme": true,
+        "useFahrenheit": false,
+        "useTwelveHourClock": false,
+        "weatherLocation": ""
+    },
+    "session": {
+        "dragThreshold": 30,
+        "enabled": true,
+        "icons": {
+            "hibernate": "downloading",
+            "logout": "logout",
+            "reboot": "cached",
+            "shutdown": "power_settings_new"
+        },
+        "vimKeybinds": false
+    },
+    "sidebar": {
+        "dragThreshold": 80,
+        "enabled": true,
+        "minHoverThreshold": 200,
+        "showOnHover": false
+    },
+    "utilities": {
+        "enabled": true,
+        "maxToasts": 4,
+        "quickToggles": [
+            {
+                "enabled": true,
+                "id": "wifi"
+            },
+            {
+                "enabled": true,
+                "id": "bluetooth"
+            },
+            {
+                "enabled": true,
+                "id": "mic"
+            },
+            {
+                "enabled": true,
+                "id": "settings"
+            },
+            {
+                "enabled": true,
+                "id": "gameMode"
+            },
+            {
+                "enabled": true,
+                "id": "dnd"
+            }
+        ],
+        "toasts": {
+            "audioInputChanged": true,
+            "audioOutputChanged": true,
+            "capsLockChanged": true,
+            "chargingChanged": true,
+            "configLoaded": true,
+            "dndChanged": true,
+            "fullscreen": "off",
+            "gameModeChanged": true,
+            "kbLayoutChanged": true,
+            "kbLimit": true,
+            "nowPlaying": false,
+            "numLockChanged": true,
+            "vpnChanged": true
+        }
+    }
+}

@@ -1,10 +1,33 @@
 #!/bin/bash
 # Detect current shell and open appropriate launcher
+STATE_FILE="$HOME/.cache/shell-mode"
+
+if [[ -f "$STATE_FILE" ]]; then
+    MODE=$(cat "$STATE_FILE")
+    if [[ "$MODE" == "caelestia" ]]; then
+        caelestia shell drawers toggle launcher
+        exit $?
+    elif [[ "$MODE" == "omarchy" ]]; then
+        OMARCHY_SHELL="$HOME/.local/share/omarchy/bin/omarchy-shell"
+        if [[ -x "$OMARCHY_SHELL" ]]; then
+            "$OMARCHY_SHELL" shell toggle omarchy.launcher "{}"
+            exit $?
+        fi
+        # fallback: try ipc socket directly
+    fi
+fi
+
+# Fallback: try omarchy-shell via IPC (handles quickshell instances)
+OMARCHY_SHELL="$HOME/.local/share/omarchy/bin/omarchy-shell"
+if [[ -x "$OMARCHY_SHELL" ]]; then
+    "$OMARCHY_SHELL" -q shell toggle omarchy.launcher "{}" && exit 0
+fi
+
+# Fallback: check pgrep for caelestia
 if pgrep -f "qs -c caelestia" >/dev/null 2>&1; then
     caelestia shell drawers toggle launcher
-elif pgrep -f "quickshell.*omarchy/shell" >/dev/null 2>&1; then
-    ~/.local/share/omarchy/bin/omarchy-shell shell toggle omarchy.launcher "{}"
-else
-    echo "No shell running" >&2
-    exit 1
+    exit $?
 fi
+
+echo "No shell running" >&2
+exit 1

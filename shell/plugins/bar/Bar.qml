@@ -783,6 +783,15 @@ Item {
     WlrLayershell.namespace: "omarchy-bar"
     WlrLayershell.layer: WlrLayer.Top
 
+    // Consumes right-clicks that fall through bar content (widget gaps,
+    // empty sections) to prevent Qt Quick's context menu synthesis
+    // from crashing on stale item references.
+    MouseArea {
+      anchors.fill: parent
+      acceptedButtons: Qt.RightButton
+      onPressed: function(mouse) { mouse.accepted = true }
+    }
+
     Loader {
       anchors.fill: parent
       sourceComponent: root.vertical ? verticalBar : horizontalBar

@@ -25,7 +25,8 @@
           "verticalFormat": "HH\n\u2014\nmm"
         },
         {
-          "id": "omarchy.weather"
+          "id": "omarchy.weather",
+          "unit": "metric"
         },
         {
           "id": "omarchy.system-update"

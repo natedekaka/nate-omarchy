@@ -156,7 +156,7 @@ Panel {
 
   Process {
     id: forecastProc
-    command: ["bash", "-lc", "curl -fsS --max-time 5 'https://wttr.in/?format=j1' 2>/dev/null"]
+    command: ["bash", "-lc", "curl -fsS --max-time 5 'https://wttr.in/Cimahi?format=j1' 2>/dev/null"]
     stdout: StdioCollector {
       waitForEnd: true
       onStreamFinished: {
@@ -191,7 +191,7 @@ Panel {
 
   Process {
     id: locationProc
-    command: ["bash", "-lc", "curl -fsS --max-time 4 'https://wttr.in?format=%l' 2>/dev/null"]
+    command: ["bash", "-lc", "curl -fsS --max-time 4 'https://wttr.in/Cimahi?format=%l' 2>/dev/null"]
     stdout: StdioCollector {
       waitForEnd: true
       onStreamFinished: {

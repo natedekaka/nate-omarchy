@@ -2,4 +2,4 @@
 
 # omarchy:summary=Launch the fastfetch TUI that gives information about the current system.
 
-exec omarchy-launch-or-focus-tui "bash -c 'fastfetch; read -n 1 -s'"
+exec foot --window-size-chars=110x30 --app-id=org.omarchy.fastfetch -e bash -c 'fastfetch; read -n 1 -s'

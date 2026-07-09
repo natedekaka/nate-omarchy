@@ -1,0 +1,38 @@
+@define-color background #282a36;
+@define-color background-alt #1e1f29;
+@define-color foreground #f8f8f2;
+@define-color foreground-alt #f8f8f2;
+@define-color accent #bd93f9;
+@define-color accent-alt #8be9fd;
+@define-color muted #6272a4;
+@define-color surface #44475a;
+@define-color urgent #ff5555;
+@define-color warning #f1fa8c;
+@define-color success #50fa7b;
+
+window#waybar {
+    background: @background;
+    border-bottom: 1px solid @surface;
+    color: @foreground;
+}
+#workspaces button { background: transparent; border-radius: 6px; color: @muted; margin: 2px 2px; padding: 0 6px; min-width: 24px; }
+#workspaces button.active { background: @accent; color: @background; }
+#workspaces button.urgent { background: @urgent; color: @background; }
+#workspaces button:hover { background: @surface; color: @foreground; }
+#clock, #battery, #cpu, #memory, #disk, #temperature, #network, #pulseaudio, #tray, #mode, #idle_inhibitor, #custom-weather, #custom-menu, #custom-power, #custom-updates, #custom-notification { background: transparent; border-radius: 6px; margin: 2px 4px; padding: 0 8px; }
+#clock { color: @accent-alt; font-weight: bold; }
+#battery { color: @foreground; }
+#battery.charging, #battery.plugged { color: @success; }
+#battery.critical:not(.charging) { color: @urgent; }
+#cpu { color: @accent; }
+#memory { color: @accent-alt; }
+#disk { color: @success; }
+#network { color: @foreground; }
+#network.disconnected { color: @urgent; }
+#pulseaudio { color: @foreground; }
+#pulseaudio.muted { color: @muted; }
+#tray { background: @surface; border-radius: 8px; margin: 2px 4px; padding: 0 6px; }
+#custom-menu { color: @accent; font-size: 16px; padding: 0 12px; }
+#custom-power { color: @urgent; padding: 0 12px; }
+tooltip { background: @background; border: 1px solid @surface; border-radius: 8px; }
+tooltip label { color: @foreground; }

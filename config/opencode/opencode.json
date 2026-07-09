@@ -1,5 +1,23 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "theme": "system",
-  "autoupdate": false
+  "autoupdate": false,
+  "model": "big-pickle",
+  "plugin": [
+    "opencode-tool-search",
+    "opencode-rules",
+    "@nick-vi/opencode-type-inject",
+    "opencode-copilot-plugin",
+    "opencode-rate-limit",
+    "oh-my-opencode",
+    "opencode-vibeguard",
+    "opencode-pty",
+    "opencode-wakatime",
+    "opencode-antigravity-auth",
+    "opencode-helicone-session",
+    "opencode-notificator",
+    "opencode-worktree",
+    "opencode-morph-plugin",
+    "opencode-daytona"
+  ]
 }

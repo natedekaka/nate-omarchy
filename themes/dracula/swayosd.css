@@ -1,0 +1,13 @@
+@define-color background-color #282a36;
+@define-color border-color #bd93f9;
+@define-color label #f8f8f2;
+@define-color image #bd93f9;
+@define-color progress #bd93f9;
+window:not(:backdrop) #container, window:backdrop #container {
+    border: 2px solid @border-color;
+    border-radius: 4px;
+    background-color: @background-color;
+    padding: 12px;
+    background-clip: padding-box;
+    box-shadow: 2px 2px 9px 0px rgba(22, 22, 22, 1);
+}
